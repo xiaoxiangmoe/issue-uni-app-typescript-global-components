@@ -1,0 +1,16 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    // 因为 @dcloudio/types 的类型问题，如果设置为 false 会出错
+    "skipLibCheck": false,
+    "isolatedModules": false,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "exactOptionalPropertyTypes": false,
+    "lib": ["esnext", "dom"],
+    "types": [],
+    "paths": {}
+  },
+  "include": ["src/**/*"]
+}

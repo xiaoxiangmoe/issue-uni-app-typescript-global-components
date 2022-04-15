@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 const title = ref('Hello');
+const { log } = console;
 </script>
 <template>
   <view class="content">
-    <image class="logo" src="/static/logo.png" />
+    <image class="logo" src="/static/logo.png" @click="log($event)" />
     <view class="text-area">
       <text class="title">{{ title }}</text>
     </view>

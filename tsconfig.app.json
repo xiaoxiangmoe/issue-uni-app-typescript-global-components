@@ -3,14 +3,16 @@
   "compilerOptions": {
     "composite": true,
     // 因为 @dcloudio/types 的类型问题，如果设置为 false 会出错
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "isolatedModules": false,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
     "exactOptionalPropertyTypes": false,
     "lib": ["esnext", "dom"],
     "types": [],
-    "paths": {}
+    "paths": {
+      "@vue/runtime-dom": ["./src/uni-app/runtime-uniapp.d.ts"]
+    }
   },
   "include": ["src/**/*"]
 }

@@ -1,5 +1,5 @@
 /* eslint-disable */
-import type { HTMLAttributes } from './runtime-uniapp';
+import type { HTMLAttributes } from './runtime-uni-app';
 
 interface ViewAttributes extends HTMLAttributes {
   /**
@@ -23,6 +23,7 @@ interface ViewAttributes extends HTMLAttributes {
    */
   'hover-stay-time'?: number;
 }
+export type ViewComponent = new () => { $props: ViewAttributes };
 
 interface ImageAttributes extends HTMLAttributes {
   /**
@@ -115,6 +116,7 @@ interface ImageAttributes extends HTMLAttributes {
     };
   }) => void;
 }
+export type ImageComponent = new () => { $props: ImageAttributes };
 
 interface TextAttributes extends HTMLAttributes {
   /**
@@ -157,36 +159,10 @@ interface TextAttributes extends HTMLAttributes {
    */
   decode?: boolean;
 }
+export type TextComponent = new () => { $props: TextAttributes };
 
-export interface UniAppNativeElements {
-  /**
-   * ## view
-   *
-   * 视图容器。
-   *
-   * 它类似于传统html中的div，用于包裹各种元素内容。
-   *
-   * 如果使用nvue (opens new window)，则需注意，包裹文字应该使用`<text>`组件。
-   *
-   * {@link https://uniapp.dcloud.io/component/view.html}
-   */
-  view: ViewAttributes;
-  /**
-   * ## image
-   *
-   * 图片
-   *
-   * {@link https://uniapp.dcloud.io/component/image.html}
-   */
-  image: ImageAttributes
-  /**
-   * ## text
-   *
-   * 文本组件。
-   *
-   * 用于包裹文本内容。
-   *
-   * {@link https://uniapp.dcloud.io/component/text.html}
-   */;
-  text: TextAttributes;
+export interface UniAppGlobalComponents {
+  view: ViewComponent;
+  image: ImageComponent;
+  text: TextComponent;
 }

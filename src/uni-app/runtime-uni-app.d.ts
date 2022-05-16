@@ -25,8 +25,8 @@ declare const ANIMATION = 'animation';
 declare type AssignerFn = (value: any) => void;
 
 declare const BaseClass: {
-    new (): HTMLElement;
-    prototype: HTMLElement;
+  new (): HTMLElement;
+  prototype: HTMLElement;
 };
 
 export declare const createApp: CreateAppFunction<Element>;
@@ -34,61 +34,61 @@ export declare const createApp: CreateAppFunction<Element>;
 export declare const createSSRApp: CreateAppFunction<Element>;
 
 export declare function defineCustomElement<Props, RawBindings = object>(
-    setup: (props: Readonly<Props>, ctx: SetupContext) => RawBindings | RenderFunction,
+  setup: (props: Readonly<Props>, ctx: SetupContext) => RawBindings | RenderFunction,
 ): VueElementConstructor<Props>;
 
 export declare function defineCustomElement<
-    Props = {},
-    RawBindings = {},
-    D = {},
-    C extends ComputedOptions = {},
-    M extends MethodOptions = {},
-    Mixin extends ComponentOptionsMixin = ComponentOptionsMixin,
-    Extends extends ComponentOptionsMixin = ComponentOptionsMixin,
-    E extends EmitsOptions = EmitsOptions,
-    EE extends string = string,
+  Props = {},
+  RawBindings = {},
+  D = {},
+  C extends ComputedOptions = {},
+  M extends MethodOptions = {},
+  Mixin extends ComponentOptionsMixin = ComponentOptionsMixin,
+  Extends extends ComponentOptionsMixin = ComponentOptionsMixin,
+  E extends EmitsOptions = EmitsOptions,
+  EE extends string = string,
 >(
-    options: ComponentOptionsWithoutProps<Props, RawBindings, D, C, M, Mixin, Extends, E, EE> & {
-        styles?: string[];
-    },
+  options: ComponentOptionsWithoutProps<Props, RawBindings, D, C, M, Mixin, Extends, E, EE> & {
+    styles?: string[];
+  },
 ): VueElementConstructor<Props>;
 
 export declare function defineCustomElement<
-    PropNames extends string,
-    RawBindings,
-    D,
-    C extends ComputedOptions = {},
-    M extends MethodOptions = {},
-    Mixin extends ComponentOptionsMixin = ComponentOptionsMixin,
-    Extends extends ComponentOptionsMixin = ComponentOptionsMixin,
-    E extends EmitsOptions = Record<string, any>,
-    EE extends string = string,
+  PropNames extends string,
+  RawBindings,
+  D,
+  C extends ComputedOptions = {},
+  M extends MethodOptions = {},
+  Mixin extends ComponentOptionsMixin = ComponentOptionsMixin,
+  Extends extends ComponentOptionsMixin = ComponentOptionsMixin,
+  E extends EmitsOptions = Record<string, any>,
+  EE extends string = string,
 >(
-    options: ComponentOptionsWithArrayProps<PropNames, RawBindings, D, C, M, Mixin, Extends, E, EE> & {
-        styles?: string[];
-    },
+  options: ComponentOptionsWithArrayProps<PropNames, RawBindings, D, C, M, Mixin, Extends, E, EE> & {
+    styles?: string[];
+  },
 ): VueElementConstructor<{
-    [K in PropNames]: any;
+  [K in PropNames]: any;
 }>;
 
 export declare function defineCustomElement<
-    PropsOptions extends Readonly<ComponentPropsOptions>,
-    RawBindings,
-    D,
-    C extends ComputedOptions = {},
-    M extends MethodOptions = {},
-    Mixin extends ComponentOptionsMixin = ComponentOptionsMixin,
-    Extends extends ComponentOptionsMixin = ComponentOptionsMixin,
-    E extends EmitsOptions = Record<string, any>,
-    EE extends string = string,
+  PropsOptions extends Readonly<ComponentPropsOptions>,
+  RawBindings,
+  D,
+  C extends ComputedOptions = {},
+  M extends MethodOptions = {},
+  Mixin extends ComponentOptionsMixin = ComponentOptionsMixin,
+  Extends extends ComponentOptionsMixin = ComponentOptionsMixin,
+  E extends EmitsOptions = Record<string, any>,
+  EE extends string = string,
 >(
-    options: ComponentOptionsWithObjectProps<PropsOptions, RawBindings, D, C, M, Mixin, Extends, E, EE> & {
-        styles?: string[];
-    },
+  options: ComponentOptionsWithObjectProps<PropsOptions, RawBindings, D, C, M, Mixin, Extends, E, EE> & {
+    styles?: string[];
+  },
 ): VueElementConstructor<ExtractPropTypes<PropsOptions>>;
 
 export declare function defineCustomElement(options: {
-    new (...args: any[]): ComponentPublicInstance;
+  new (...args: any[]): ComponentPublicInstance;
 }): VueElementConstructor;
 
 export declare const defineSSRCustomElement: typeof defineCustomElement;
@@ -98,13 +98,13 @@ export declare const hydrate: RootHydrateFunction;
 /* Excluded from this release type: initDirectivesForSSR */
 
 declare type InnerComponentDef = ConcreteComponent & {
-    styles?: string[];
+  styles?: string[];
 };
 
 declare type ModelDirective<T> = ObjectDirective<
-    T & {
-        _assign: AssignerFn;
-    }
+  T & {
+    _assign: AssignerFn;
+  }
 >;
 
 export declare const render: RootRenderFunction<Element | ShadowRoot>;
@@ -114,33 +114,33 @@ declare const TRANSITION = 'transition';
 export declare const Transition: FunctionalComponent<TransitionProps>;
 
 export declare const TransitionGroup: new () => {
-    $props: TransitionGroupProps;
+  $props: TransitionGroupProps;
 };
 
 export declare type TransitionGroupProps = Omit<TransitionProps, 'mode'> & {
-    tag?: string;
-    moveClass?: string;
+  tag?: string;
+  moveClass?: string;
 };
 
 export declare interface TransitionProps extends BaseTransitionProps<Element> {
-    name?: string;
-    type?: typeof TRANSITION | typeof ANIMATION;
-    css?: boolean;
-    duration?:
-        | number
-        | {
-              enter: number;
-              leave: number;
-          };
-    enterFromClass?: string;
-    enterActiveClass?: string;
-    enterToClass?: string;
-    appearFromClass?: string;
-    appearActiveClass?: string;
-    appearToClass?: string;
-    leaveFromClass?: string;
-    leaveActiveClass?: string;
-    leaveToClass?: string;
+  name?: string;
+  type?: typeof TRANSITION | typeof ANIMATION;
+  css?: boolean;
+  duration?:
+    | number
+    | {
+        enter: number;
+        leave: number;
+      };
+  enterFromClass?: string;
+  enterActiveClass?: string;
+  enterToClass?: string;
+  appearFromClass?: string;
+  appearActiveClass?: string;
+  appearToClass?: string;
+  leaveFromClass?: string;
+  leaveActiveClass?: string;
+  leaveToClass?: string;
 }
 
 export declare function useCssModule(name?: string): Record<string, string>;
@@ -164,34 +164,34 @@ export declare const vModelText: ModelDirective<HTMLInputElement | HTMLTextAreaE
 export declare const vShow: ObjectDirective<VShowElement>;
 
 declare interface VShowElement extends HTMLElement {
-    _vod: string;
+  _vod: string;
 }
 
 export declare class VueElement extends BaseClass {
-    private _def;
-    private _props;
-    /* Excluded from this release type: _instance */
-    private _connected;
-    private _resolved;
-    private _numberProps;
-    private _styles?;
-    constructor(_def: InnerComponentDef, _props?: Record<string, any>, hydrate?: RootHydrateFunction);
-    connectedCallback(): void;
-    disconnectedCallback(): void;
-    /**
-     * resolve inner component definition (handle possible async component)
-     */
-    private _resolveDef;
-    protected _setAttr(key: string): void;
-    /* Excluded from this release type: _getProp */
-    /* Excluded from this release type: _setProp */
-    private _update;
-    private _createVNode;
-    private _applyStyles;
+  private _def;
+  private _props;
+  /* Excluded from this release type: _instance */
+  private _connected;
+  private _resolved;
+  private _numberProps;
+  private _styles?;
+  constructor(_def: InnerComponentDef, _props?: Record<string, any>, hydrate?: RootHydrateFunction);
+  connectedCallback(): void;
+  disconnectedCallback(): void;
+  /**
+   * resolve inner component definition (handle possible async component)
+   */
+  private _resolveDef;
+  protected _setAttr(key: string): void;
+  /* Excluded from this release type: _getProp */
+  /* Excluded from this release type: _setProp */
+  private _update;
+  private _createVNode;
+  private _applyStyles;
 }
 
 export declare type VueElementConstructor<P = {}> = {
-    new (initialProps?: Record<string, any>): VueElement & P;
+  new (initialProps?: Record<string, any>): VueElement & P;
 };
 
 /**
@@ -212,19 +212,31 @@ export {};
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 import type { UniAppCommonProps, UniAppEvents } from './uni-app-common-props-events';
-import type { UniAppNativeElements } from './uni-app-native-elements';
+import type { VNode } from '@vue/runtime-core';
 
 type EventHandlers<E> = {
-    [K in keyof E]?: E[K] extends Function ? E[K] : (payload: E[K]) => void;
+  [K in keyof E]?: E[K] extends Function ? E[K] : (payload: E[K]) => void;
 };
 export interface HTMLAttributes extends UniAppCommonProps, EventHandlers<Events> {}
 export interface Events extends UniAppEvents {}
 
 declare global {
-    namespace JSX {
-        interface IntrinsicAttributes extends UniAppCommonProps {}
-
-        interface IntrinsicElements extends UniAppNativeElements {}
+  namespace JSX {
+    interface Element extends VNode {}
+    interface ElementClass {
+      $props: {};
     }
+    interface ElementAttributesProperty {
+      $props: {};
+    }
+    interface IntrinsicAttributes extends UniAppCommonProps {}
+
+    interface IntrinsicElements {
+      template: any;
+      slot: any;
+      component: any;
+      block: any;
+    }
+  }
 }
 export {};

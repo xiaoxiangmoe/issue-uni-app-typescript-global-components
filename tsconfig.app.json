@@ -11,8 +11,11 @@
     "lib": ["esnext", "dom"],
     "types": [],
     "paths": {
-      "@vue/runtime-dom": ["./src/uni-app/runtime-uniapp.d.ts"]
+      "@vue/runtime-dom": ["./src/uni-app/runtime-uni-app.d.ts"]
     }
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "vueCompilerOptions": {
+    "experimentalRuntimeMode": "runtime-uni-app"
+  }
 }
